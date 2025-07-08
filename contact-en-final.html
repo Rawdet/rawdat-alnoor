@@ -1,0 +1,163 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us - روضة النور</title>
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #fdfaf5;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    main {
+      padding: 2rem;
+      max-width: 800px;
+      margin: auto;
+      text-align: center;
+    }
+    img {
+      max-width: 100%;
+      height: auto;
+      margin-bottom: 2rem;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+    form {
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      text-align: right;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 1rem;
+    }
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #45a049;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Contact Us</h1>
+  </header>
+  <main>
+    <img src="contact.jpg" width="100" alt="Contact Us - روضة النور">
+
+<h3 style="text-align: center; color: #333; margin-top: 20px;">روابط التواصل الاجتماعي</h3>
+<div style="display: flex; justify-content: center; gap: 15px; margin-bottom: 20px; flex-wrap: wrap;">
+  <a href="https://wa.me/201005421548" target="_blank" style="background-color: #25D366; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+    واتساب
+  </a>
+  <a href="https://www.facebook.com/share/1EdSLmPPwo/" target="_blank" style="background-color: #3b5998; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;">
+    فيسبوك
+  </a>
+</div>
+
+    
+<p style="text-align: center; font-size: 1.1rem; max-width: 700px; margin: auto; padding-bottom: 20px;">
+We’d love to hear from you! Whether you have a question, feedback, or want to know more about our programs, just send us a message below.
+</p>
+
+<form action="https://formspree.io/f/mpwroqdo" method="post">
+      <label for="name">Full Name</label>
+      <input type="text" id="name" name="name" required>
+
+      <label for="whatsapp">رقم واتساب</label>
+<input type="tel" id="whatsapp" name="whatsapp" required> 
+      
+     <label for="email">Email</label>
+      <input type="email" id="email" name="email" >
+
+      <label for="message">رسالتك</label>
+      <textarea id="message" name="message" rows="5" required></textarea>
+
+      <button type="submit">Send Message</button>
+    </form>
+
+    <a class="button" href="index.html">العودة إلى الصفحة الرئيسية</a>
+  </main>
+
+<div style="position: fixed; bottom: 10px; right: 10px; z-index: 999;">
+  <select onchange="changeLanguage(this.value)" style="padding: 6px; border-radius: 6px;">
+    <option value="ar">العربية</option>
+    <option value="en" selected>English</option>
+  </select>
+</div>
+<script>
+  function changeLanguage(lang) {
+    const map = {
+      "contact": "contact",
+      "about": "about",
+      "team": "team",
+      "library": "library"
+    };
+    const base = window.location.pathname.split("/").pop().split("-")[0]; // page name
+    if (lang === "ar") {
+      window.location.href = map[base] + ".html";
+    } else {
+      window.location.href = map[base] + "-en.html";
+    }
+  }
+</script>
+
+
+<div style="position: fixed; bottom: 10px; right: 10px; z-index: 999;">
+  <select onchange="changeLanguage(this.value)" style="padding: 6px; border-radius: 6px;">
+    <option value="en" selected>English</option>
+    <option value="ar">العربية</option>
+  </select>
+</div>
+<script>
+  function changeLanguage(lang) {
+    const current = window.location.pathname.split("/").pop();
+    const map = {
+      "index-en": "index",
+      "about-en": "about",
+      "contact-en": "contact",
+      "team-en": "team",
+      "library-en": "library"
+    };
+    for (const key in map) {
+      if (current.includes(key)) {
+        const base = map[key];
+        window.location.href = lang === "ar" ? base + ".html" : base + "-en.html";
+        return;
+      }
+    }
+  }
+</script>
+
+</body>
+</html>
