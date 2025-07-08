@@ -181,20 +181,5 @@ function increment_fatihah_hifdh() {
   el.innerText = parseInt(el.innerText) + 1;
 }
 </script>
-
-<script>
-function filterCards(type) {
-  const cards = document.querySelectorAll(".resource");
-  cards.forEach(card => {
-    const cardType = card.getAttribute("data-type");
-    if (type === "all" || cardType === type) {
-      card.style.display = "block";
-    } else {
-      card.style.display = "none";
-    }
-  });
-}
-</script>
-
 </body>
 </html>
