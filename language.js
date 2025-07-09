@@ -1,8 +1,10 @@
 function changeLanguage(lang) {
   const page = window.location.pathname.split("/").pop().split(".")[0];
   if (lang === "ar") {
-    window.location.href = "/" + page + ".html";
+    // يرجع للمجلد الأساسي
+    window.location.href = "/rawdat-alnoor/" + page + ".html";
   } else {
+    // يدخل على النسخة الإنجليزية
     window.location.href = "/rawdat-alnoor/en/" + page + ".html";
   }
 }
