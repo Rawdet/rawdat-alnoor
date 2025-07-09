@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+
+<html dir="rtl" lang="ar">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Rawdat Al-Noor Library - روضة النور</title>
+<style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #f9f9f9;
+      color: #333;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background-color: #4CAF50;
+      color: white;
+      text-align: center;
+      padding: 1rem;
+    }
+    main {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .resource {
+      background-color: #fff;
+      margin-bottom: 1rem;
+      padding: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    .resource h3 {
+      margin-top: 0;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 2rem;
+      color: #4CAF50;
+      text-decoration: none;
+      font-weight: bold;
+    }
+  </style>
+<style>
+.filter-buttons button {
+  padding: 10px 20px;
+  margin: 5px;
+  border: none;
+  background: linear-gradient(135deg, #f9a825, #f57c00);
+  color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+.filter-buttons button:hover {
+  background: linear-gradient(135deg, #f57c00, #ef6c00);
+  transform: scale(1.05);
+}
+</style>
+
+<style>
+  .resource {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .resource:hover {
+    transform: scale(1.03);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+
+<style>
+  .resource a {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .resource a:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+</style>
+
+
+<style>
+  .resource {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease forwards;
+    animation-delay: 0.2s;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+
+
+<style>
+  @media (min-width: 768px) {
+    .container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .resource {
+      flex: 1 1 calc(48% - 10px);
+      box-sizing: border-box;
+    }
+  }
+</style>
+
+</head>
+<body>
+<header>
+<h1>Rawdat Al-Noor educational Library </h1>
+</header>
+<main>
+<div class="filter-buttons" style="text-align: center; margin-bottom: 2rem;">
+<button onclick="filterCards('all')" style="padding: 8px 16px; margin: 5px;">📚 All</button>
+<button onclick="filterCards('audio')">🎧 Audio</button>
+<button onclick="filterCards('pdf')" style="padding: 8px 16px; margin: 5px;">📄 PDF</button>
+<button onclick="filterCards('video')">🎥 Video</button>
+</div>
+<div class="resource" data-type="audio">
+<div style="position: relative;">
+<span style="background-color: #4CAF50; color: white; font-size: 12px; padding: 2px 6px; border-radius: 4px; position: absolute; top: -10px; left: -10px;">Audio</span>
+<h3>🔊 Surah Al-Fatihah - Audio Memorization</h3>
+</div>
+<p>Download Material audio file for teaching Surah Al-Fatihah - Audio Memorization.</p>
+<audio controls="True"><source src="surat-al-fatihah-kids.mp3" type="audio/mpeg"/></audio><a href="surat-al-fatihah-kids.mp3" onclick="increment_fatihah_audio()" style="display: inline-block; background-color: #4CAF50; color: white;
+       padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;" target="_blank">
+       ⬇️ Download Surat Al-Fatihah
+    </a>
+<p style="font-size: 12px; color: gray; margin-top: 5px;">
+    📥 Download Material <span id="fatihah-audio-count">100</span> times
+    </p>
+</div>
+<div class="resource" data-type="pdf">
+<div style="position: relative;">
+<span style="background-color: #2196F3; color: white; font-size: 12px; padding: 2px 6px;
+    border-radius: 4px; position: absolute; top: -10px; left: -10px;">PDF</span>
+<h3>📚 Arabic letter cards</h3>
+</div>
+<p style="font-weight: 500;">A colorful set of flashcards to teach Arabic letters in a fun and visual way, suitable for kindergartens.</p>
+<a href="arabic-cards-new.pdf" onclick="increment_arabic_cards_new()" style="display: inline-block; background-color: #2196F3; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;" target="_blank">⬇️ Download flash cards</a>
+<p style="font-size: 12px; color: gray; margin-top: 5px;">
+📥 Download Material <span id="arabic-cards-new-count">100</span> times
+</p>
+</div>
+<div class="resource" data-type="pdf">
+<div style="position: relative;">
+<span style="background-color: #9C27B0; color: white; font-size: 12px; padding: 2px 6px; border-radius: 4px; position: absolute; top: -10px; left: -10px;">PDF</span>
+<h3>🖍️ Coloring activities</h3>
+<p>A set of fun coloring books that help the child develop his creative skills and visual coordination</p>
+<a href="coloring.pdf" onclick="increment_coloring()" style="display: inline-block; background-color: #ba68c8; color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: bold;" target="_blank">⬇️ Download colouring book</a>
+<p style="font-size: 12px; color: gray; margin-top: 5px;">
+📥 Download Material <span id="coloring-count">100</span> times
+</p>
+</div>
+</div>
+<div class="resource" data-type="video">
+<div style="position: relative;">
+<span style="background-color: #E53935; color: white; font-size: 12px; padding: 2px 6px; border-radius: 4px; position: absolute; top: -10px; left: -10px;">Video</span>
+<h3>🎥 Memorize Surat Al-Fatihah - Audio Memorization</h3>
+</div>
+<p>A fun way to memorize children Surah Al-Fatihah - Audio Memorization (mp4).</p>
+<p style="font-size: 12px; color: gray; margin-top: 5px;">
+📥 Download Material<span id="fatihah-hifdh-count">100</span> times
+</p>
+<br/>
+<video controls="True" width="100%"><source src="fatihah-hifdh.mp4" type="video/mp4"/></video><a href="fatihah-hifdh.mp4" onclick="increment_fatihah_hifdh()" style="display: inline-block; background-color: #E53935; color: white;
+    padding: 10px 20px; margin-top: 10px; border-radius: 8px; text-decoration: none; font-weight: bold;" target="_blank">
+    ⬇️ Download Surat Al-fatihah
+    </a>
+<div style="text-align: center; margin-top: 2rem;"><a class="button" href="index.html">Return to the main page</a></div>
+</div></main>
+
+
+<script>
+function filterCards(type) {
+  const cards = document.querySelectorAll(".resource");
+  cards.forEach(card => {
+    const cardType = card.getAttribute("data-type");
+    if (type === "all" || cardType === type) {
+      card.style.display = "block";
+    } else {
+      card.style.display = "none";
+    }
+  });
+}
+</script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div style="position: fixed; bottom: 10px; right: 10px; z-index: 999;">
+  <select onchange="changeLanguage(this.value)" style="padding: 6px; border-radius: 6px;">
+    <option value="ar">العربية</option>
+    <option value="en" selected>English</option>
+  </select>
+</div>
+<script src="language.js"></script>
+</body>
+</html>
