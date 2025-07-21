@@ -5,7 +5,7 @@ function changeLanguage(lang) {
     window.location.href = "/rawdat-alnoor/" + page + ".html";
   } else {
     // يدخل على النسخة الإنجليزية
-    window.location.href = "/rawdat-alnoor/en/" + page + ".html";
+    window.location.href = "/rawdet-alnoor/en/index.html";
   }
 }
 
